@@ -8,7 +8,6 @@ metadata:
     argocd.argoproj.io/sync-wave: "4"
   labels:
     strimzi.io/cluster: ephemeral-single-cluster
-  namespace: helm-amq
 spec:
   partitions: 10
   replicas: 1
@@ -25,7 +24,6 @@ metadata:
     argocd.argoproj.io/sync-wave: "4"
   labels:
     strimzi.io/cluster: ephemeral-single-cluster
-  namespace: helm-amq
 spec:
   partitions: 6
   replicas: 1
@@ -42,7 +40,6 @@ metadata:
     argocd.argoproj.io/sync-wave: "4"
   labels:
     strimzi.io/cluster: ephemeral-single-cluster
-  namespace: helm-amq
 spec:
   partitions: 15
   replicas: 1
