@@ -1,11 +1,10 @@
 ---
-# Source: helm-amq-streams-operator/templates/2-operatorgroup.yaml
 apiVersion: operators.coreos.com/v1
 kind: OperatorGroup
 metadata:
   name: amq-og
   annotations:
-    argocd.argoproj.io/sync-wave: "1"
+    argocd.argoproj.io/sync-wave: "-1"
 spec:
   targetNamespaces:
     - argo-sync-wave-kafka 
@@ -15,7 +14,7 @@ kind: Subscription
 metadata:
   name: amq-streams
   annotations:
-    argocd.argoproj.io/sync-wave: "1"
+    argocd.argoproj.io/sync-wave: "-1"
 spec:
   channel: amq-streams-2.x
   installPlanApproval: Automatic
