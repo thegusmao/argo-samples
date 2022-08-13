@@ -1,0 +1,49 @@
+---
+# Source: helm-amq-streams/templates/2-kafka-topics.yaml
+kind: KafkaTopic
+apiVersion: kafka.strimzi.io/v1beta2
+metadata:
+  name: marvel
+  annotations:
+    argocd.argoproj.io/sync-wave: "4"
+  labels:
+    strimzi.io/cluster: ephemeral-single-cluster
+spec:
+  partitions: 10
+  replicas: 1
+  config:
+    retention.ms: 604800000
+    segment.bytes: 1073741824
+---
+# Source: helm-amq-streams/templates/2-kafka-topics.yaml
+kind: KafkaTopic
+apiVersion: kafka.strimzi.io/v1beta2
+metadata:
+  name: dc
+  annotations:
+    argocd.argoproj.io/sync-wave: "4"
+  labels:
+    strimzi.io/cluster: ephemeral-single-cluster
+spec:
+  partitions: 6
+  replicas: 1
+  config:
+    retention.ms: 604800000
+    segment.bytes: 1073741824
+---
+# Source: helm-amq-streams/templates/2-kafka-topics.yaml
+kind: KafkaTopic
+apiVersion: kafka.strimzi.io/v1beta2
+metadata:
+  name: dbz
+  annotations:
+    argocd.argoproj.io/sync-wave: "4"
+  labels:
+    strimzi.io/cluster: ephemeral-single-cluster
+spec:
+  partitions: 15
+  replicas: 1
+  config:
+    retention.ms: 604800000
+    segment.bytes: 1073741824
+
